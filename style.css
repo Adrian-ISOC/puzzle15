@@ -84,7 +84,7 @@ padding-left: 20px;
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
   .puzzleBox{
-      width: 90%;
+      width: 95%;
     }
   }
 
