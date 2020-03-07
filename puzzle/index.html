@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>El Juego del 15</title>
+    <meta name="og:title" property="og:title" content="Jugar el juego del 15">
+    <meta name="description" content="Que es el puzzle 15 X 15, El  Juego del 15">
+    <link rel="stylesheet" href="style.css">
+    <script data-ad-client="ca-pub-9818489866208822" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Puzzle15</h1> 
+        </div>
+    </header>
+    <div class="content"></div>
+
+<div class="counters">
+    <div class="moves">
+        <h3>Movimientos</h3>
+        <h4 id="moveCounter"></h4>
+    </div>
+    <div class="alertBox">
+        <h3 id="alert"></h3>
+    </div>
+
+    <div class="cronometro">
+        <h3>Tiempo</h3>
+        <div id="hms"></div>
+    </div>
+</div>
+
+    <div class="puzzleBox">
+    <button id="1" onclick="pieceOne()"></button><button id="2" onclick="pieceTwo()"></button><button id="3" onclick="pieceThree()"></button><button id="4" onclick="pieceFourth()"></button>
+    <br>
+    <button id="5" onclick="pieceFive()"></button><button id="6" onclick="pieceSix()"></button><button id="7" onclick="pieceSeven()"></button><button id="8" onclick="pieceEight()"></button>
+    <br>
+    <button id="9" onclick="pieceNine()"></button><button id="10" onclick="pieceTen()"></button><button id="11" onclick="pieceEleven()"></button><button id="12" onclick="pieceTwelve()"></button>
+    <br>
+    <button id="13" onclick="pieceThirteen()"></button><button id="14" onclick="pieceFourteen()"></button><button id="15" onclick="pieceFifteen()"></button><button id="16" onclick="pieceSixteen()"></button>
+    <br>
+</div>
+    <br>
+    <br>
+    <div class="controlButtons">
+    <button onclick="play()">Nuevo</button>
+    <button onclick="ready()">Completado</button>
+    <button onclick="noPossible()">Imposible</button>
+    <br><br>
+</div>
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
