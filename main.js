@@ -24,6 +24,41 @@ function counter(){
   document.getElementById('moveCounter').innerHTML = moveNumber;
 }
 
+window.onload = init;
+function init(){
+    h = 0;
+    m = 0;
+    s = 0;
+    document.getElementById("hms").innerHTML="00:00:00";
+}         
+function cronometrar(){
+    escribir();
+    id = setInterval(escribir,1000);
+}
+function escribir(){
+    var hAux, mAux, sAux;
+    s++;
+    if (s>59){m++;s=0;}
+    if (m>59){h++;m=0;}
+    if (h>24){h=0;}
+
+    if (s<10){sAux="0"+s;}else{sAux=s;}
+    if (m<10){mAux="0"+m;}else{mAux=m;}
+    if (h<10){hAux="0"+h;}else{hAux=h;}
+
+    document.getElementById("hms").innerHTML = hAux + ":" + mAux + ":" + sAux; 
+}
+function parar(){
+    clearInterval(id);
+
+}
+function reiniciar(){
+    clearInterval(id);
+    document.getElementById("hms").innerHTML="00:00:00";
+    h=0;m=0;s=0;
+}
+
+
 
 //Move programing 
 
@@ -380,6 +415,10 @@ function pieceSixteen(){
 }
 
 function play(){
+  if(moveNumber != 0 ||  document.getElementById("hms").innerHTML != "00:00:00" ){
+    reiniciar()
+  }
+  cronometrar()
 
   moveNumber = document.getElementById('moveCounter').innerHTML = 0;
 
@@ -443,9 +482,11 @@ function ready(){
     && position9.innerHTML == 9 && position10.innerHTML == 10 && position11.innerHTML ==  11 && position12.innerHTML == 12 
     && position13.innerHTML == 13 && position14.innerHTML == 14 && position15.innerHTML == 15 && position16.style.visibility == "hidden"  ){
     alert("You Win, in just " + moveNumber + " move, That's Awesome " )
+    document.getElementById("alert").innerHTML = "Felicidades!, logrado resolver este Puzzle en solo " + moveNumber + " en un tiempo de "
+
     
   }else{
-    alert("The puzzlet is not complete")
+    document.getElementById("alert").innerHTML = "El Puzzle necesita ser completado"
   }
 }
 
@@ -454,10 +495,10 @@ function noPossible(){
     && position5.innerHTML == 5 && position6.innerHTML == 6 && position7.innerHTML == 7 && position8.innerHTML == 8
     && position9.innerHTML == 9 && position10.innerHTML == 10 && position11.innerHTML ==  11 && position12.innerHTML == 12 
     && position13.innerHTML == 13 && position14.innerHTML == 15 && position15.innerHTML == 14 && position16.style.visibility == "hidden"  ){
-    alert("Of course, This Puzzle is impossible to solve")
+    document.getElementById("alert").innerHTML = "Felicidades! Acabas de demostrar que este puzzle al igual que otros no puede ser resuelto"
     
   }else{
-    alert("Keep Trying, It can be completed")
+    document.getElementById("alert").innerHTML = "Mantente Intentando, este Puzzle puede ser completado"
   }
 }
 

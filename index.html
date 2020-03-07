@@ -8,26 +8,30 @@
     <meta name="og:title" property="og:title" content="Jugar el juego del 15">
     <meta name="description" content="Que es el puzzle 15 X 15, El  Juego del 15">
     <link rel="stylesheet" href="style.css">
+    <script data-ad-client="ca-pub-9818489866208822" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-    <div class="content">
-        <h1>El Juego del 15</h1>
-        <h2> ¿Que es este Juego</h2>
-        <p> Es una cajita formada por 16 casillas de las cuales sólo quince están ocupadas. Todas las fichas están colocadas en orden numérico, excepto la 14 y la 15, que tienen sus posiciones intercambiadas. El juego consiste en maniobrar todas las fichas para corregir el error que hay en la fila inferior de la cajita, de manera que todas las fichas queden en orden consecutivo. </p>
-        <h2>Hay alguna razón para intentar jugarlo</h2>
-        <p>Entre 1880 y 1882, el juego del 15 se convirtió en una verdadera plaga social que se extendió por Estados Unidos y Europa. </p>
-        <p>Esta pagina fue desarrollada para dejar en evidencia la teoria de que solo la mitad de los cuadros puede ser resuerto</p>
-        <h2> ¿Como determinar cuales cuadros pueden ser completados y cuales no?</h2>
-        <h3>Imposible</h3>    
-    <img src="./imposible.png" alt="puzzle imposible">
-    <h3>Completado</h3>
-    <img src="./completado.png" alt="puzzle completado">
-    <h3>Move</h3>
-    <h4 id="moveCounter"></h4>
+    <header>
+        <div class="logo">
+            <h1>Puzzle15</h1> 
+        </div>
+    </header>
+    <div class="content"></div>
+
+<div class="counters">
+    <div class="moves">
+        <h3>Movimientos</h3>
+        <h4 id="moveCounter"></h4>
+    </div>
+    <div class="alertBox">
+        <h3 id="alert"></h3>
+    </div>
+
+    <div class="cronometro">
+        <h3>Tiempo</h3>
+        <div id="hms"></div>
+    </div>
 </div>
-
-
-
 
     <div class="puzzleBox">
     <button id="1" onclick="pieceOne()"></button><button id="2" onclick="pieceTwo()"></button><button id="3" onclick="pieceThree()"></button><button id="4" onclick="pieceFourth()"></button>
@@ -45,11 +49,10 @@
     <button onclick="play()">Nuevo</button>
     <button onclick="ready()">Completado</button>
     <button onclick="noPossible()">Imposible</button>
+    <br><br>
 </div>
 
-<h1>Referencias</h1>
-<a href="https://es.wikipedia.org/wiki/Juego_del_15">wikipedia</a>
-<a href="https://www.psicoactiva.com/juegos-inteligencia/fifteen/">Psicologia activa</a>
+
 
     <script src="main.js"></script>
 </body>
