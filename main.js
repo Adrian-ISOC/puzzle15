@@ -482,8 +482,7 @@ function ready(){
     && position5.innerHTML == 5 && position6.innerHTML == 6 && position7.innerHTML == 7 && position8.innerHTML == 8
     && position9.innerHTML == 9 && position10.innerHTML == 10 && position11.innerHTML ==  11 && position12.innerHTML == 12 
     && position13.innerHTML == 13 && position14.innerHTML == 14 && position15.innerHTML == 15 && position16.style.visibility == "hidden"  ){
-    alert("You Win, in just " + moveNumber + " move, That's Awesome " )
-    document.getElementById("alert").innerHTML = "Felicidades!, logrado resolver este Puzzle en solo " + moveNumber + "movimientos en un tiempo de " +  document.getElementById("hms").innerHTML + "segundos"
+    document.getElementById("alert").innerHTML = "Felicidades!, logrado resolver este Puzzle en solo " + moveNumber + " movimientos en un tiempo de " +  document.getElementById("hms").innerHTML + " seg"
       parar()
     
   }else{
