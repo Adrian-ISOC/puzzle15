@@ -10,9 +10,12 @@ header{
 .logo{
     padding: 30px;
 }
-
-.counters{
+.alertBox{
     margin-top: 100px;
+    text-align: center;
+}
+.counters{
+    margin-top: 30px;
     display:flex;
 }
 
