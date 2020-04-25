@@ -11,9 +11,7 @@ header{
     position: fixed;
     top: 0px;
 }
-.no-fixed{
-    position: relative;
-}
+
 .logo{
     padding: 30px;
 }
