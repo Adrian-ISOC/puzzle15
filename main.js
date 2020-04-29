@@ -18,6 +18,7 @@ var position15 = document.getElementById('15')
 var position16 = document.getElementById('16')
 
 var moveNumber = document.getElementById("moveCounter").innerHTML = 0;
+ 
 
 function counter(){
   moveNumber ++
@@ -30,7 +31,10 @@ function init(){
     m = 0;
     s = 0;
     document.getElementById("hms").innerHTML="00:00:00";
-}         
+    
+
+}     
+
 function cronometrar(){
     escribir();
     id = setInterval(escribir,1000);
@@ -47,6 +51,7 @@ function escribir(){
     if (h<10){hAux="0"+h;}else{hAux=h;}
 
     document.getElementById("hms").innerHTML = hAux + ":" + mAux + ":" + sAux; 
+
 }
 function parar(){
     clearInterval(id);
@@ -546,11 +551,12 @@ function ready(){
     document.getElementById("alert").innerHTML = "Felicidades! Haz logrado resolver este Puzzle en solo " + moveNumber + " movimientos en un tiempo de " +  document.getElementById("hms").innerHTML + " seg"
       parar()
       document.getElementById('image').style.display = 'inline'
-      
+      saveBestRecord()
     
   }else{
     document.getElementById("alert").innerHTML = "El Puzzle necesita ser completado"
   }
+
 }
 
 function noPossible(){
@@ -561,10 +567,11 @@ function noPossible(){
     document.getElementById("alert").innerHTML = "Felicidades! Acabas de demostrar que este puzzle al igual que otros no puede ser resuelto" 
     parar()
     document.getElementById('image').style.display = 'inline'
+    saveBestRecord()
      } else{
     document.getElementById("alert").innerHTML = "Mantente Intentando, este Puzzle puede ser completado"
    }
- 
+
   }
 
 function Verification(){
@@ -699,4 +706,42 @@ if(position16.innerHTML == 16){
 }
 
 }
+function saveBestRecord() {
+  min = document.getElementById("hms").innerHTML.substring(3, 5)
+  seg = document.getElementById("hms").innerHTML.substring(6)
+
+  localStorage.setItem("lastRecord", parseInt(min) + ":" + parseInt(seg)) ;
+  localStorage.setItem("lastRecordM", document.getElementById("moveCounter").innerHTML) ;
+  document.getElementById("bestTime").innerHTML = "Movimientos: " + localStorage.lastRecordM + " Tiempo: " + localStorage.lastRecord;
+  if(localStorage.lastRecord < 10){
+    document.getElementById("bestTime").innerHTML = "Movimientos: " + localStorage.lastRecordM + " Tiempo: 0" + localStorage.lastRecord;
+  }
+  
+  if (parseInt(min) < localStorage.lastRecord.substring(0, 1)){
+    localStorage.setItem("lastRecord", parseInt(min) + ":" + parseInt(seg)) ;
+    localStorage.setItem("lastRecordM", document.getElementById("moveCounter").innerHTML) ;
+    document.getElementById("bestTime").innerHTML = localStorage.getItem("lastRecord");
+    document.getElementById("bestTime").innerHTML = "Movimientos: " + localStorage.lastRecordM + " Tiempo: " + localStorage.lastRecord;
+    if(localStorage.lastRecord < 10){
+      document.getElementById("bestTime").innerHTML = "Movimientos: " + localStorage.lastRecordM + " Tiempo: 0" + localStorage.lastRecord;
+    }
+  }
+  if(parseInt(min) <= localStorage.lastRecord.substring(0, 1) & parseInt(seg) < localStorage.lastRecord.substring(2) ){
+    localStorage.setItem("lastRecord", parseInt(min) + ":" + parseInt(seg)) ;
+    localStorage.setItem("lastRecordM", document.getElementById("moveCounter").innerHTML) ;
+    document.getElementById("bestTime").innerHTML = "Movimientos: " + localStorage.lastRecordM + " Tiempo: " + localStorage.lastRecord;
+    if(localStorage.lastRecord < 10){
+      document.getElementById("bestTime").innerHTML = "Movimientos: " + localStorage.lastRecordM + " Tiempo: 0" + localStorage.lastRecord;
+    }
+  }
+
+  console.log(localStorage)
+ 
+}
+    // Retrieve
+if(localStorage.lastRecord){
+  document.getElementById("bestTime").innerHTML = "Movimientos: " + localStorage.lastRecordM + " Tiempo: 0" + localStorage.lastRecord;
+
+}
+  
 

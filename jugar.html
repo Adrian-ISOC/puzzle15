@@ -22,24 +22,27 @@
     <div class="alertBox">
         <h3 id="alert"></h3>
     </div>
+
 <div class="counters">
     <div class="moves">
         <h3>Movimientos</h3>
-        <h4 id="moveCounter"></h4>
+        <span id="moveCounter"></span>
     </div>
 
+    <div class="bestRecord up">
+        <h3>Mejor Partida</h3>
+        <span id="bestTime"></span>
+    </div>
     <div class="cronometro">
         <h3>Tiempo</h3>
-        <div id="hms"></div>
+        <span id="hms"></span>
     </div>
-    <div class="bestRecord">
-        <h3>Mejor juego</h3>
-        <div id="bestTime"></div>
-    </div>
+</div>
+ 
     <div class="effects">
             <img src="/winner.gif" alt="" srcset="" id="image">
     </div>
-</div>
+
 
     <div class="puzzleBox">
     <button id="1" onclick="pieceOne()"></button><button id="2" onclick="pieceTwo()"></button><button id="3" onclick="pieceThree()"></button><button id="4" onclick="pieceFourth()"></button>
@@ -57,20 +60,19 @@
     <button onclick="play()">Nuevo</button>
     <button onclick="ready()">Completado</button>
     <button onclick="noPossible()">Imposible</button>              
-    <br><br>
+    <br><br><br>
+    
+    <div class="bestRecord down">
+        <h3>Mejor Partida</h3>
+        <h4 id="bestTime"></h4>
+    </div>
 </div>
+
 
 <div class="foot">
     <img src="isfodosu.png" alt="" srcset="" width="400">
     <h4>Creditos: Adrian De Oleo Comas, Xavier Terán Batista</h4>
 </div>
 <script src="main.js"></script>
-<script type="application/javascript">
-    var ad_idzone = "3827505",
-    ad_width = "300",
-    ad_height = "250",
-    v_pos = "top",
-    h_pos = "left";
-</script>
 </body>
 </html>

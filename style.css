@@ -49,15 +49,16 @@ header{
     display:flex;
 }
 
-.moves{
+.counters ,.moves,.cronometro,.bestRecord{
     padding: 10px;
     margin: auto;
     text-align: center;
 }
-.cronometro{
-    padding: 10px;
-    margin: auto;
-    text-align: center;
+.counters h3{
+    padding-bottom: 5px;
+}
+.down{
+    display: none;
 }
 .puzzleBox{
     margin: auto;
@@ -157,11 +158,18 @@ padding-left: 20px;
         outline: none;
         font-size: 15px;
     }
+    .down{
+        display: block;
+    }
+    .up{
+       display: none;
+    }
     .foot img{
         display: none;
     }
     .effects img{
         width: 100%;
     }
+    
   }
 
