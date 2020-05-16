@@ -64,7 +64,6 @@ function reiniciar(){
 }
 
 
-
 //Move programing 
 
 function pieceOne(){
