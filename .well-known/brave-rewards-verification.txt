@@ -1,4 +1,4 @@
 This is a Brave Rewards publisher verification file.
 
-Domain: mypuzzlesito.xyz
-Token: 3b6920bb8965c8e109a50398a86403a81c8c0a810567746c20a56f00f3f3a29a
+Domain: juegodel15.netlify.app
+Token: 52e4587aa59e2170d88280922f91e408005bf4f29df3a8e0bb3f77fb36719aeb
